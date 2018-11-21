@@ -1,0 +1,262 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: arial;
+}
+
+.warpper{
+	width: 100%;
+	min-width: 900px;
+	height: 2000px;
+	background: url("/LOC/image/background.png");
+}
+
+/*******************************背景音乐样式开始********************************/
+.warpper .background-music{
+	position: fixed;
+	bottom: 10%;
+	left: 0;
+	width: 401px;
+	height: 100px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.warpper .background-music .control-button{
+	position: relative;
+	left: -20px;
+	width: 30px;
+	height: 60px;
+	font-family: STXingkai;
+	font-size: 18px;
+	color: #FFC125;
+	font-weight: bold;
+	line-height: 60px;
+	padding: 0 0 0 10px;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 0 30px 30px 0;
+	-moz-border-radius: 0 30px 30px 0;
+	-webkit-border-radius: 0 30px 30px 0;
+	background: #54FF9F;
+}
+
+.warpper .background-music .player{
+	display: none;
+	position: relative;
+	left: -30px;
+	width: 0px;
+	height: 60px;
+	border-radius: 0 30px 30px 0;
+	-moz-border-radius: 0 30px 30px 0;
+	-webkit-border-radius: 0 30px 30px 0;
+	background: #54FF9F;
+	cursor: default;
+}
+
+.warpper .background-music .player .song-name{
+	position: absolute;
+	left: 10%;
+	width: 80%;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	font-size: 16px;
+	color: white;
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: default;
+}
+
+.warpper .background-music .player .control-list{
+	position: absolute;
+	left: 10%;
+	top: 25px;
+	width: 80%;
+	height: 35px;
+}
+
+.warpper .background-music .player .control-list .controllers{
+	position: absolute;
+	top: 50%;
+	margin-top: -12.5px;
+	width: 100%;
+	height: 100%;
+	white-space: nowrap;
+}
+
+.warpper .background-music .player .control-list .controllers .controller{
+	cursor: pointer;
+	display: inline-block;
+	width: 7.8125%;
+	/*width: 25px;*/
+	height: 25px;
+	overflow: hidden;
+}
+
+.warpper .background-music .player .control-list .controllers .last-song{
+	margin-right: 5px;
+	background: url("/LOC/image/last_icon.png") no-repeat;
+}
+
+.warpper .background-music .player .control-list .controllers .pause-play{
+	margin-right: 5px;
+	background: url("/LOC/image/pause_icon.png") no-repeat;
+}
+
+.warpper .background-music .player .control-list .controllers .next-song{
+	background: url("/LOC/image/next_icon.png") no-repeat;
+}
+
+.warpper .background-music .player .control-list .controllers .time{
+	position: relative;
+	width: 50%;
+	/*width: 160px;*/
+	cursor: default;
+}
+
+.warpper .background-music .player .control-list .controllers .time .show-time{
+	display: inline-block;
+	width: 40%;
+	/*width: 64px;*/
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+	color: white;
+	text-align: center;
+	overflow: hidden;
+}
+
+.warpper .background-music .player .control-list .controllers .time .progress-bar{
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	margin-left: 4px;
+	margin-top: -2px;
+	width: 55%;
+	/*width: 88px;*/
+	height: 4px;
+	cursor: pointer;
+}
+
+.warpper .background-music .player .control-list .controllers .time .time-bars{
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+
+.warpper .background-music .player .control-list .controllers .time .white-progress-bar{
+	width: 0%;
+	background: white;
+}
+
+.warpper .background-music .player .control-list .controllers .time .darker-progress-bar{
+	width: 0%;
+	background: #7CFC00;
+}
+
+.warpper .background-music .player .control-list .controllers .time .dark-progress-bar{
+	width: 100%;
+	background: grey;
+}
+
+.warpper .background-music .player .control-list .controllers .volume{
+	position: relative;
+	overflow: visible;
+	margin-right: 5px;
+}
+
+.warpper .background-music .player .control-list .controllers .volume .volume-button{
+	width: 100%;
+	height: 100%;
+	background: url("/LOC/image/volume_icon.png") no-repeat;
+}
+
+.warpper .background-music .player .control-list .controllers .volume .volume-bar{
+	display: none;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -5px;
+	width: 40%;
+	/*width: 10px;*/
+	height: 50px;
+}
+
+.warpper .background-music .player .control-list .controllers .volume .volume-bar .volume-bars{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.warpper .background-music .player .control-list .controllers .volume .volume-bar .background-volume-bar{
+	top: 0;
+	background: grey;
+}
+
+.warpper .background-music .player .control-list .controllers .volume .volume-bar .mask-volume-bar{
+	top: 0;
+	z-index: 100;
+}
+
+.warpper .background-music .player .control-list .controllers .volume .volume-bar .current-volume-bar{
+	bottom: 0;
+	background: white;
+}
+
+.warpper .background-music .player .control-list .controllers .mode{
+	background: url("/LOC/image/quene_icon.png") no-repeat;
+}
+/*******************************背景音乐样式结束********************************/
+
+
+/********************************导航栏样式开始*********************************/
+.warpper .nav-sorts{
+	position: relative;
+	margin: 0 auto;
+	top: 10px;
+	width: 900px;
+	height: 80px;
+	line-height: 80px;
+	background: #FFEC8B;
+	border-radius: 40px;
+	-moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    text-align: center;
+	white-space: nowrap;
+	word-spacing: 20px;
+	letter-spacing: -3px;
+}
+
+.warpper .nav-sorts a{
+	position: relative;
+	margin: auto 10px;
+	text-decoration: none;
+	font-family: KaiTi;
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #8A2BE2;
+}
+
+.warpper .nav-sorts a:visited{
+	color: #8A2BE2;
+}
+
+.warpper .nav-sorts a:hover{
+	color: #CD0000;
+	left: -0.1em;
+	top: -0.1em;
+	text-shadow: 0.1em 0.1em #999;
+}
+/********************************导航栏样式结束*********************************/
