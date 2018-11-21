@@ -22,6 +22,7 @@
 	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: center;
+	z-index: 100;
 }
 
 .warpper .background-music .control-button{
@@ -207,7 +208,7 @@
 
 .warpper .background-music .player .control-list .controllers .volume .volume-bar .mask-volume-bar{
 	top: 0;
-	z-index: 100;
+	z-index: 200;
 }
 
 .warpper .background-music .player .control-list .controllers .volume .volume-bar .current-volume-bar{
