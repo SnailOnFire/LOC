@@ -126,6 +126,9 @@ $(document).ready(function(){
 				$(this).css('background-image','url("/bgm/icons/mute_icon.png")');
 			}
 			else{
+				if(0.5 == tempVolume && 0 == currentVolume.height()) {
+					currentVolume.css('height','50%');
+				}
 				audioPlayingSong.volume = tempVolume;
 				$(this).css('background-image','url("/bgm/icons/volume_icon.png")');
 			}
@@ -153,6 +156,7 @@ $(document).ready(function(){
 			audioPlayingSong.volume = (volumeBarHeight - event.offsetY) / volumeBarHeight;
 			if(audioPlayingSong.volume < 0.1) {
 				audioPlayingSong.volume = 0;
+				tempVolume = 0.5;
 				currentVolume.css('height','0%');
 			}
 			else if(audioPlayingSong.volume > 0.9) {
