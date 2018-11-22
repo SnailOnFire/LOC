@@ -1,3 +1,3 @@
 $(document).ready(function(){
-	$('#bgm').bgm();   //加入bgm
+	$('#bgm').bgm({'top':'70%'});   //加入bgm
 })

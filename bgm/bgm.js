@@ -4,6 +4,10 @@
 			var defaults = {   //默认结构以及布局
 				width: '410px',
 				height: '100px',
+				top: '70%',
+				left: '0',
+			};
+			var htmlDomCss = {
 				htmlDom: '<div class="background-music">\
 							<audio id="playing-song" autoplay="autoplay">\
 								<source src="/bgm/music/Carly Rae Jepsen-Curiosity.mp3" type="audio/mpeg">\
@@ -46,7 +50,7 @@
 						"padding": "0",
 						"font-family": "arial",
 						"position": "fixed",
-						"bottom": "10%",
+						"top": "0",
 						"left": "0",
 						"display": "flex",
 						"flex-wrap": "nowrap",
@@ -248,14 +252,16 @@
 				}
 			};
 			var o = $.extend(defaults,options),
-				oCss = o.htmlCss;
+				bgmCss = htmlDomCss.htmlCss;
 			return this.each(function() {
-				$(this).html(defaults.htmlDom);  //插入DOM元素
+				$(this).html(htmlDomCss.htmlDom);  //插入DOM元素
 				//下面开始进行样式设置
-				oCss['.background-music'].width = o.width;
-				oCss['.background-music'].height = o.height;
-				for(var prop in oCss) {
-					$(this).find(prop).css(oCss[prop]);
+				bgmCss['.background-music'].width = o.width;
+				bgmCss['.background-music'].height = o.height;
+				bgmCss['.background-music'].top = o.top;
+				bgmCss['.background-music'].left = o.left;
+				for(var prop in bgmCss) {
+					$(this).find(prop).css(bgmCss[prop]);
 				}
 				//样式设置结束
 
