@@ -39,7 +39,7 @@
 							</div>\
 						</div>',
 				htmlCss:{
-					'.background-music': {
+					cssBackgroundMusic: {
 						"width":"0",
 						"height":"0",
 						"margin": "0",
@@ -56,7 +56,7 @@
 						"z-index": "100"
 					},
 					
-					'.control-button': {
+					cssControlButton: {
 						"position": "relative",
 						"left": "-20px",
 						"width": "30px",
@@ -75,7 +75,7 @@
 						"background": "#54FF9F"
 					},
 					
-					'.player': {
+					cssPlayer: {
 						"display": "none",
 						"position": "relative",
 						"left": "-30px",
@@ -88,7 +88,7 @@
 						"cursor": "default"
 					},
 					
-					'.song-name': {
+					cssSongName: {
 						"position": "absolute",
 						"left": "10%",
 						"width": "80%",
@@ -102,7 +102,7 @@
 						"cursor": "default"
 					},
 					
-					'.control-list': {
+					cssControlList: {
 						"position": "absolute",
 						"left": "10%",
 						"top": "25px",
@@ -110,7 +110,7 @@
 						"height": "35px"
 					},
 					
-					'.controllers': {
+					cssControllers: {
 						"position": "absolute",
 						"top": "50%",
 						"margin-top": "-12.5px",
@@ -119,7 +119,7 @@
 						"white-space": "nowrap"
 					},
 					
-					'.controller': {
+					cssController: {
 						"cursor": "pointer",
 						"display": "inline-block",
 						"width": "7.8125%",
@@ -127,27 +127,27 @@
 						"overflow": "hidden"
 					},
 					
-					'.last-song': {
+					cssLastSong: {
 						"margin-right": "5px",
 						"background": "url('/bgm/icons/last_icon.png') no-repeat"
 					},
 					
-					'.pause-play': {
+					cssPausePlay: {
 						"margin-right": "5px",
 						"background": "url('/bgm/icons/pause_icon.png') no-repeat"
 					},
 					
-					'.next-song': {
+					cssNextSong: {
 						"background": "url('/bgm/icons/next_icon.png') no-repeat"
 					},
 					
-					'.time': {
+					cssTime: {
 						"position": "relative",
 						"width": "50%",
 						"cursor": "default"
 					},
 					
-					'.show-time': {
+					cssShowTime: {
 						"display": "inline-block",
 						"width": "40%",
 						"height": "25px",
@@ -158,7 +158,7 @@
 						"overflow": "hidden"
 					},
 					
-					'.progress-bar': {
+					cssProgressBar: {
 						"display": "inline-block",
 						"position": "absolute",
 						"top": "50%",
@@ -169,7 +169,7 @@
 						"cursor": "pointer"
 					},
 					
-					'.time-bars': {
+					cssTimeBars: {
 						"display": "inline-block",
 						"position": "absolute",
 						"top": "0",
@@ -180,34 +180,34 @@
 						"-webkit-border-radius": "2px"
 					},
 					
-					'.white-progress-bar': {
+					cssWhiteProgressBar: {
 						"width": "0%",
 						"background": "white"
 					},
 					
-					'.darker-progress-bar': {
+					cssDarkerProgressBar: {
 						"width": "0%",
 						"background": "#7CFC00"
 					},
 					
-					'.dark-progress-bar': {
+					cssDarkProgressBar: {
 						"width": "100%",
 						"background": "grey"
 					},
 					
-					'.volume': {
+					cssVolume: {
 						"position": "relative",
 						"overflow": "visible",
 						"margin-right": "5px"
 					},
 					
-					'.volume-button': {
+					cssVolumeButton: {
 						"width": "100%",
 						"height": "100%",
 						"background": "url('/bgm/icons/volume_icon.png') no-repeat"
 					},
 					
-					'.volume-bar': {
+					cssVolumeBar: {
 						"display": "none",
 						"position": "absolute",
 						"bottom": "0",
@@ -217,7 +217,7 @@
 						"height": "50px"
 					},
 					
-					'.volume-bars': {
+					cssVolumeBars: {
 						"position": "absolute",
 						"left": "0",
 						"width": "100%",
@@ -227,22 +227,22 @@
 						"-webkit-border-radius": "5px"
 					},
 					
-					'.background-volume-bar': {
+					cssBackgroundVolumeBar: {
 						"top": "0",
 						"background": "grey"
 					},
 					
-					'.mask-volume-bar': {
+					cssMaskVolumeBar: {
 						"top": "0",
 						"z-index": "200"
 					},
 					
-					'.current-volume-bar': {
+					cssCurrentVolumeBar: {
 						"bottom": "0",
 						"background": "white"
 					},
 					
-					'.mode': {
+					cssMode: {
 						"background": "url('/bgm/icons/quene_icon.png') no-repeat"
 					}
 				}
@@ -252,11 +252,33 @@
 			return this.each(function() {
 				$(this).html(defaults.htmlDom);  //插入DOM元素
 				//下面开始进行样式设置
-				oCss['.background-music'].width = o.width;
-				oCss['.background-music'].height = o.height;
-				for(var prop in oCss) {
-					$(this).find(prop).css(oCss[prop]);
-				}
+				oCss.cssBackgroundMusic.width = o.width;
+				oCss.cssBackgroundMusic.height = o.height;
+				$(this).find('.background-music').css(oCss.cssBackgroundMusic);
+				$(this).find('.control-button').css(oCss.cssControlButton);
+				$(this).find('.player').css(oCss.cssPlayer);
+				$(this).find('.song-name').css(oCss.cssSongName);
+				$(this).find('.control-list').css(oCss.cssControlList);
+				$(this).find('.controllers').css(oCss.cssControllers);
+				$(this).find('.controller').css(oCss.cssController);
+				$(this).find('.last-song').css(oCss.cssLastSong);
+				$(this).find('.pause-play').css(oCss.cssPausePlay);
+				$(this).find('.next-song').css(oCss.cssNextSong);
+				$(this).find('.time').css(oCss.cssTime);
+				$(this).find('.show-time').css(oCss.cssShowTime);
+				$(this).find('.progress-bar').css(oCss.cssProgressBar);
+				$(this).find('.time-bars').css(oCss.cssTimeBars);
+				$(this).find('.white-progress-bar').css(oCss.cssWhiteProgressBar);
+				$(this).find('.darker-progress-bar').css(oCss.cssDarkerProgressBar);
+				$(this).find('.dark-progress-bar').css(oCss.cssDarkProgressBar);
+				$(this).find('.volume').css(oCss.cssVolume);
+				$(this).find('.volume-button').css(oCss.cssVolumeButton);
+				$(this).find('.volume-bar').css(oCss.cssVolumeBar);
+				$(this).find('.volume-bars').css(oCss.cssVolumeBars);
+				$(this).find('.background-volume-bar').css(oCss.cssBackgroundVolumeBar);
+				$(this).find('.mask-volume-bar').css(oCss.cssMaskVolumeBar);
+				$(this).find('.current-volume-bar').css(oCss.cssCurrentVolumeBar);
+				$(this).find('.mode').css(oCss.cssMode);
 				//样式设置结束
 
 				var backgroundMusicName = ['Carly Rae Jepsen-Curiosity', 'Coldplay-Viva La Vida', 'Delacey-Dream It Possible', 'Passenger-Let Her Go', 'The Chainsmokers  Coldplay-Something Just Like This', '韩雪-想起', '姚斯婷 -A Little Love', '郁可唯-时间煮雨'],
