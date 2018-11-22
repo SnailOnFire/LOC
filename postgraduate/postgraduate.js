@@ -1,3 +1,11 @@
 $(document).ready(function(){
-
+    $.ajax({
+		url:'/header/header.html',
+		success:function(result){
+			$('#navigation-bar').html(result);
+		},
+		error:function(){
+			alert('oops，导航栏加载失败！可刷新重试~');
+		}
+	});
 })

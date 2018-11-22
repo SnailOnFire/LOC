@@ -1,0 +1,39 @@
+<!------------------- 背景音乐开始 ------------------->
+<link rel="stylesheet" type="text/css" href="/bgm/bgm.css">
+<!-- <script type="text/javascript" src="/jquery-1.12.4.js"></script> -->
+<div class="background-music">
+	<audio id="playing-song" autoplay="autoplay">
+		<source src="/bgm/music/Carly Rae Jepsen-Curiosity.mp3" type="audio/mpeg">
+		<embed src="/bgm/music/Carly Rae Jepsen-Curiosity.mp3">
+	</audio>
+	<div class="control-button"></div>
+	<div class="player">
+		<p class="song-name"></p>
+		<div class="control-list">
+			<div class="controllers">
+				<div class="controller last-song"></div>
+				<div class="controller pause-play"></div>
+				<div class="controller next-song"></div>
+				<div class="controller time">
+					<div class="show-time">00:00/00:00</div>
+					<div class="progress-bar">
+						<div class="time-bars dark-progress-bar"></div>
+						<div class="time-bars darker-progress-bar"></div>
+						<div class="time-bars white-progress-bar"></div>
+					</div>
+				</div>
+				<div class="controller volume">
+					<div class="volume-button"></div>
+					<div class="volume-bar">
+						<div class="volume-bars background-volume-bar"></div>
+						<div class="volume-bars mask-volume-bar"></div>  <!--奇奇怪怪的是直接修改current-volume-bar的height会导致当点击到current-volume-bar上时volume-bar的event.offsetY值变化，且变化的值为current-volume-bar的height变化的一半-->
+						<div class="volume-bars current-volume-bar"></div>
+					</div>
+				</div>
+				<div class="controller mode"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="/bgm/bgm.js"></script>
+<!------------------- 背景音乐结束 ------------------->

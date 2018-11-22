@@ -7,59 +7,14 @@
 	<meta content="" name="description">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 	<link rel="stylesheet" type="text/css" href="index.css">
-	<link rel="shortcut icon" type="image/x-icon" href="/LOC/image/B_Conn.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="/image/B_Conn.ico">
 	<script type="text/javascript" src="jquery-1.12.4.js"></script>
 	<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
 	<div class="warpper">
-		<!------------------- 背景音乐开始 ------------------->
-		<div class="background-music">
-			<audio id="playing-song" autoplay="autoplay">
-				<source src="/LOC/music/Carly Rae Jepsen-Curiosity.mp3" type="audio/mpeg">
-				<embed src="/LOC/music/Carly Rae Jepsen-Curiosity.mp3">
-			</audio>
-			<div class="control-button"></div>
-			<div class="player">
-				<p class="song-name"></p>
-				<div class="control-list">
-					<div class="controllers">
-						<div class="controller last-song"></div>
-						<div class="controller pause-play"></div>
-						<div class="controller next-song"></div>
-						<div class="controller time">
-							<div class="show-time">00:00/00:00</div>
-							<div class="progress-bar">
-								<div class="time-bars dark-progress-bar"></div>
-								<div class="time-bars darker-progress-bar"></div>
-								<div class="time-bars white-progress-bar"></div>
-							</div>
-						</div>
-						<div class="controller volume">
-							<div class="volume-button"></div>
-							<div class="volume-bar">
-								<div class="volume-bars background-volume-bar"></div>
-								<div class="volume-bars mask-volume-bar"></div>  <!--奇奇怪怪的是直接修改current-volume-bar的height会导致当点击到current-volume-bar上时volume-bar的event.offsetY值变化，且变化的值为current-volume-bar的height变化的一半-->
-								<div class="volume-bars current-volume-bar"></div>
-							</div>
-						</div>
-						<div class="controller mode"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!------------------- 背景音乐结束 ------------------->
-
-		<!-------------------- 导航栏开始 -------------------->
-		<div class="nav-sorts">
-			<a href="/LOC/postgraduate/postgraduate.html" class="postgraduate">川大考研</a>
-			<a href="/LOC/recycle/recycle.html" class="recycle">旧物回收</a>
-			<a href="/LOC/information/information.html" class="information">最新资讯</a>
-			<a href="/LOC/afe/afe.html" class="afe">便利生活</a>
-			<a href="/LOC/rent/rent.html" class="rent">川大租房</a>
-			<a href="/LOC/aboutus/aboutus.html" class="aboutus">关于我们</a>
-		</div>
-		<!-------------------- 导航栏结束 -------------------->
+		<div id="bgm"></div><!----- 背景音乐插件 ----->
+		<div id="navigation-bar"></div><!---- 导航栏插件 ---->
 	</div>
 </body>
 </html>
