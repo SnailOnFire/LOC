@@ -32,48 +32,73 @@ body,html{
 	justify-content: center;
 }
 
-.card-nav a{
+.card-nav>div{
+	position: relative;
 	text-align: center;
-	text-decoration: none;
-	color: white;
-	font-family: kaiti;
 	display: inline-block;
 	width: 15%;
 	height: 100%;
-	margin-right: 5%;
-	box-shadow: 3px 3px 5px #999;
-	transition: transform 2s;
-	-webkit-transition: -webkit-transform 2s;
-	-moz-transition: -moz-transform 2s;
+	margin-right: 3%;
 }
 
-.flip{
-	transform: rotateY(360deg);
-	-webkit-transform: rotateY(360deg);
-	-moz-transform: rotateY(360deg);
+.card-nav>div div{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
 }
 
-.card-nav a.postgraduate{
+.card-nav .hover-area{
+	z-index: 10;
+}
+
+.card-nav a{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+	font-family: kaiti;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+} 
+
+.card-nav .postgraduate .mask{
 	background: blue;
 } 
 
-.card-nav a.recycle{
+.card-nav .recycle .mask{
 	background: green;
 } 
 
-.card-nav a.information{
+.card-nav .information .mask{
 	background: #EEEE00;
 } 
 
-.card-nav a.afe{
+.card-nav .afe .mask{
 	background: pink;
 } 
 
-.card-nav a.rent{
+.card-nav .rent .mask{
 	background: purple;
 } 
 
-.card-nav a.aboutus{
+.card-nav .aboutus .mask{
 	margin-right: 0;
 	background: grey;
-} 
+}
+
+.card-nav>div>div:first-child{
+	transition: transform 1s;
+	-webkit-transition: -webkit-transform 1s;
+	-moz-transition: -moz-transform 1s;
+}
+
+.flip{
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
