@@ -35,7 +35,7 @@ $(document).ready(function(){
 			}
 	},
 		cardWidth = allCards.postGraduate.card.width(),
-		cardHeight = allCards.postGraduate.card.height()
+		cardHeight = allCards.postGraduate.card.height();
 	$('.card-nav a').css('line-height',cardHeight / 6 + 'px');
 	$('.card-nav').css('font-size',cardWidth / 4 + 'px');
 	$(window).resize(function(){
@@ -54,6 +54,7 @@ $(document).ready(function(){
 			thisCard.card.css('border-radius',cardWidth / 2);  //所有卡片设置圆角
 			thisCard.card.hover(
 				function() {
+					// thisCard.card.css({'top':'-5%'});
 					clearTimeout(thisCard.timer);
 					if(!thisCard.card.hasClass('flip')) {
 						thisCard.card.removeClass('no-flip');
@@ -64,13 +65,14 @@ $(document).ready(function(){
 					}
 				},
 				function(){
+					// thisCard.card.css({'top':'0'});
 					thisCard.timer = setTimeout(function(){
 						thisCard.card.addClass('no-flip');
 						thisCard.card.removeClass('flip');
 						setTimeout(function(){
 							thisCard.card.html('');
 						},250);
-					},1000);
+					},2000);
 				}
 			)
 		}(allCards[prop]))
