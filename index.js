@@ -56,6 +56,7 @@ $(document).ready(function(){
 				function() {
 					clearTimeout(thisCard.timer);
 					if(!thisCard.card.hasClass('flip')) {
+						thisCard.card.removeClass('no-flip');
 						thisCard.card.addClass('flip');
 						setTimeout(function(){
 							thisCard.card.html(thisCard.cardValue);
@@ -64,6 +65,7 @@ $(document).ready(function(){
 				},
 				function(){
 					thisCard.timer = setTimeout(function(){
+						thisCard.card.addClass('no-flip');
 						thisCard.card.removeClass('flip');
 						setTimeout(function(){
 							thisCard.card.html('');
