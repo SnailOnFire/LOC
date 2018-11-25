@@ -30,6 +30,7 @@ body,html{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	white-space: nowrap;
 }
 
 .card-nav a{
@@ -39,9 +40,9 @@ body,html{
 	color: white;
 	font-family: kaiti;
 	display: inline-block;
-	width: 15%;
+	width: 14%;
 	height: 100%;
-	margin-right: 3%;
+	margin-right: 2%;
 	transition: transform 1s;
 	-webkit-transition: -webkit-transform 1s;
 	-moz-transition: -moz-transform 1s;
@@ -60,6 +61,7 @@ body,html{
 }
 
 .card-nav a.postgraduate{
+	margin-left: 2%;
 	background: blue;
 } 
 
@@ -80,6 +82,6 @@ body,html{
 } 
 
 .card-nav a.aboutus{
-	margin-right: 0;
+	margin-right: 2%;
 	background: grey;
 } 
