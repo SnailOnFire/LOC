@@ -16,3 +16,13 @@ body,html{
 	background: url("/image/aboutus.jpg");
 	background-position: center center;
 }
+
+#content{
+	position: absolute;
+	top: 20%;
+	left: 10%;
+	width: 80%;
+	height: 70%;
+	border-radius: 50px;
+	border: 10px solid grey;
+}

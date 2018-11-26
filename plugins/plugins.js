@@ -562,9 +562,6 @@
                 'width':'900px',
                 'height':'80px',
                 'top':'10px',
-                'word-spacing':'20px',
-                'letter-spacing':'-3px',
-                'font-size':'1.8em'
             };
             var htmlAndCss = {
                 htmlDom:'<!-------------------- 导航栏开始 -------------------->\
@@ -579,30 +576,26 @@
                         <!-------------------- 导航栏结束 -------------------->',
                 css:{
                     ".nav-sorts":{
-                        "padding":" 0",
-                        "position":" relative",
-                        "margin":" 0 auto",
-                        "top":" 0",
+                        "position":" absolute",
+						"top":" 0",
+						"left":" 0",
                         "width":" 0px",
-                        "height":" 0px",
-                        "line-height":" 0px",
+						"height":" 0px",
+						'min-width':'900px',
                         "background":" #FFEC8B",
-                        "border-radius":" 0px",
-                        "-moz-border-radius":" 0px",
-                        "-webkit-border-radius":" 0px",
                         "text-align":" center",
                         "white-space":" nowrap",
-                        "word-spacing":" 0px",
                         "letter-spacing":" 0px",
                         "overflow":"hidden"
                     },
                     
                     ".nav-sorts a":{
-                        "position":" relative",
-                        "margin":" auto 10px",
+						"display" : "inline-block",
+						"position":" relative",
+						"width": "15%",
+						"height": "100%",
                         "text-decoration":" none",
                         "font-family":" KaiTi",
-                        "font-size":" 0",
                         "font-weight":" bold",
                         "color":" #8A2BE2"
                     } 
@@ -633,44 +626,56 @@
                 $(this).html(htmlAndCss.htmlDom);
                 oCss[".nav-sorts"].width = o.width;
                 oCss[".nav-sorts"].height = o.height;
-                oCss[".nav-sorts"].top = o.top;
-                oCss[".nav-sorts"].wordSpacing = o['word-spacing'];
+				oCss[".nav-sorts"].top = o.top;
                 oCss[".nav-sorts"].letterSpacing = o['letter-spacing'];
-                oCss[".nav-sorts a"].fontSize = o['font-size'];
-                oCss[".nav-sorts"].lineHeight = o.height;
-                oCss[".nav-sorts"]["border-radius"] = parseInt(o.height) / 2 + 'px';
-                oCss[".nav-sorts"]["-moz-border-radius"] = parseInt(o.height) / 2 + 'px';
-                oCss[".nav-sorts"]["-webkit-border-radius"] = parseInt(o.height) / 2 + 'px';
                 for(var prop in oCss) {
 					$(this).find(prop).css(oCss[prop]);
-                }
-                
+				}
+				setCss();
+
+				$(window).resize(function(){
+					setCss();
+				})
+				
                 $(this).find('.nav-sorts a').hover(function(){
                     $(this).css(htmlAndCss.action[".nav-sorts a:hover"]);
                 },function(){
                     $(this).css(htmlAndCss.action[".nav-sorts a:normal"]);
 				});
 
-				function changeNavOrder(){
+				if($('.nav-sorts').find(target).length) {
+					changeNavCssAndOrder();
+				}
+
+				function setCss() {
+					$(".nav-sorts").css({'left': ($('.warpper').width() - $('.nav-sorts').width()) / 2 +'px',
+									lineHeight: $('.nav-sorts').height() + 'px',
+									'border-radius':$('.nav-sorts').height() / 2 + 'px',
+									'-moz-border-radius':$('.nav-sorts').height() / 2 + 'px',
+									'-webkit-border-radius':$('.nav-sorts').height() / 2 + 'px',
+									'letter-spacing': 0 - $('.nav-sorts').width() / 250 + 'px',
+									'word-spacing': $('.nav-sorts').width() / 50 + 'px'});
+					$('.nav-sorts a').css('font-size', $('.nav-sorts').width() / 28 + 'px');
+				}
+
+				function changeNavCssAndOrder(){
 					var defaults = {
 						"color":"red",
 						"left":" -0.1em",
 						"top":" -0.1em",
-						"font-size": "2em",
-						"text-shadow":" 0.1em 0.1em #999"
+						"font-size":'',
+                        "text-shadow":" 0.1em 0.1em #999"
 					},
 						that;
 					var o = $.extend(defaults,cssOpitions);
 					that = $('.nav-sorts').find(target);
 					that.unbind();
+					o.fontSize = $('.nav-sorts').width() / 28 + 'px';
 					that.css(o);
 					if(change) {
 						that.clone().insertBefore($('.nav-sorts').find('.postgraduate'));
 						that.eq(0).remove();
 					}
-				}
-				if($('.nav-sorts').find(target).length) {
-					changeNavOrder(target,cssOpitions);
 				}
             });
 		},
