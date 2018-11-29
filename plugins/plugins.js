@@ -581,7 +581,7 @@
 						"left":" 0",
                         "width":" 0px",
 						"height":" 0px",
-						'min-width':'900px',
+						'min-width':'800px',
                         "background":" #FFEC8B",
                         "text-align":" center",
                         "white-space":" nowrap",
@@ -754,7 +754,9 @@
             var defaults = {
                 width: '30px',
                 height: '30px',
-                top: '88%',
+				top: '88%',
+				bottom:'',
+				left:'',
                 right: '1%',
             }
             var htmlAndCss = {
@@ -764,7 +766,9 @@
                     'width': '',
                     'height': '',
                     'line-height': '',
-                    'top': '',
+					'top': '',
+					'bottom':'',
+					'left':'',
                     'right': '',
                     'text-align':'center',
                     'font-size': '12px',
@@ -787,8 +791,18 @@
                 oCss.width = o.width;
                 oCss.height = o.height;
                 oCss['line-height'] = o.height;
-                oCss.top = o.top;
-                oCss.right = o.right;
+				if(options.bottom) {
+					oCss.bottom = o.bottom;
+				}
+				else {
+					oCss.top = o.top;
+				}
+				if(options.left) {
+					oCss.left = o.left;
+				}
+				else {
+					oCss.right = o.right;
+				}
                 $(this).find('.go-home').css(oCss);
             })
 		}

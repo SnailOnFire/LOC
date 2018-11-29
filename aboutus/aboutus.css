@@ -10,8 +10,9 @@ body,html{
 }
 
 .warpper{
+	position: relative;
 	width: 100%;
-	min-width: 900px;
+	min-width: 1000px;
 	height: 100%;
 	background: url("/image/aboutus.jpg");
 	background-position: center center;
@@ -20,9 +21,27 @@ body,html{
 #content{
 	position: absolute;
 	top: 20%;
-	left: 10%;
-	width: 80%;
+	left: 5%;
+	width: 90%;
+	min-width: 900px;
 	height: 70%;
+	line-height: 50px;
 	border-radius: 50px;
 	border: 10px solid grey;
+}
+
+#content h1{
+	padding: 10px 0 0 0;
+	color: yellow;
+	text-align: center;
+	font-family: kaiti;
+}
+
+#content p{
+	color: white;
+	text-indent: 2em;
+}
+
+#content p:last-child{
+	text-align: center;
 }
